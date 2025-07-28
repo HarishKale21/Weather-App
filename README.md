@@ -1,2 +1,13 @@
-# Weather-App
-A simple weather app made using HTML , CSS and JS which fetch weather from Openweathermap API
+
+🌦 Weather App
+
+A web app that shows real-time weather data using the OpenWeatherMap API.
+
+*Features
+- Search weather by city
+- Displays temperature, humidity, wind speed
+- Responsive design
+
+* Tech Stack
+- HTML, CSS, JavaScript
+- OpenWeatherMap API
