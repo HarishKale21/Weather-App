@@ -11,3 +11,6 @@ A web app that shows real-time weather data using the OpenWeatherMap API.
 * Tech Stack
 - HTML, CSS, JavaScript
 - OpenWeatherMap API
+*DEMO
+Check it out on netlify
+https://skysee.netlify.app/
