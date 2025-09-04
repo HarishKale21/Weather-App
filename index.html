@@ -1,25 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather App</title>
-    <link rel="stylesheet" href="./style3.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SkySee - Weather App</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style3.css" />
 </head>
-<body>
-    <div id="weather-container">
-        <h2>Weather App</h2>
-        <input type="text" id="city" placeholder="Enter city">
-        <button onclick="getWeather()">Search</button>
-
-        <img id="weather-icon" alt="Weather Icon">
-
-        <div id="temp-div"></div>
-
-        <div id="weather-info"></div>
-
-        <div id="hourly-forecast"></div>
+<body class="theme-default">
+  <header class="nav">
+    <div class="brand">
+      <span class="logo">☀️</span>
+      <span class="title">SkySee</span>
     </div>
-    <script src="./script3.js"></script>
+    <div class="search">
+      <input id="city" type="text" placeholder="Search city…" aria-label="City name" />
+      <button id="searchBtn" class="btn">Search</button>
+      <button id="locBtn" class="btn">📍 My Location</button>
+      <button id="unitToggle" class="btn btn-ghost" aria-pressed="false" title="Toggle °C/°F">°C</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- CURRENT -->
+    <section id="current" class="glass hero fade-in">
+      <div class="hero-left">
+        <img id="weather-icon" class="icon-xl hidden" alt="Weather icon" />
+        <div class="temp-wrap">
+          <div id="temp" class="temp">--°</div>
+          <div id="desc" class="desc">Search a city to begin</div>
+          <div id="place" class="place"></div>
+          <div id="datetime" class="sub"></div>
+        </div>
+      </div>
+      <div class="stats">
+        <div class="stat"><span>Feels</span><strong id="feels">--°</strong></div>
+        <div class="stat"><span>Humidity</span><strong id="humidity">--%</strong></div>
+        <div class="stat"><span>Wind</span><strong id="wind">-- m/s</strong></div>
+        <div class="stat"><span>Pressure</span><strong id="pressure">-- hPa</strong></div>
+        <div class="stat"><span>Sunrise</span><strong id="sunrise">--:--</strong></div>
+        <div class="stat"><span>Sunset</span><strong id="sunset">--:--</strong></div>
+      </div>
+    </section>
+
+    <!-- HOURLY -->
+    <section class="group">
+      <div class="group-head">
+        <h2>Next 24 hours</h2>
+      </div>
+      <div id="hourly" class="rail shimmer"></div>
+    </section>
+
+    <!-- DAILY -->
+    <section class="group">
+      <div class="group-head">
+        <h2>Next 5 days</h2>
+      </div>
+      <div id="daily" class="grid shimmer"></div>
+    </section>
+
+    <div id="toast" role="status" class="toast hidden"></div>
+  </main>
+
+  <footer class="footer">
+    <span>Powered by OpenWeather</span>
+  </footer>
+
+  <script src="./script3.js"></script>
 </body>
 </html>
